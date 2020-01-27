@@ -2,6 +2,7 @@
 
 set -exu
 
+NOMAD_SERVER_ADDRESS=`dig +short myip.opendns.com @resolver1.opendns.com`
 NOMAD_VERSION="0.5.6"
 DOCKER_VERSION="17.03.2"
 UNAME="$(uname -r)"
