@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 set -exu
-
-NOMAD_SERVER_ADDRESS=`dig +short myip.opendns.com @resolver1.opendns.com`
+NOMAD_SERVER_ADDRESS="35.226.26.250" # Enter IP Address of the Services VM
 NOMAD_VERSION="0.5.6"
 DOCKER_VERSION="17.03.2"
 UNAME="$(uname -r)"
@@ -47,12 +46,12 @@ export PRIVATE_IP
 
 echo "Using address: ${PRIVATE_IP}"
 
-if [ -z "${NOMAD_SERVER_ADDRESS}" ]; then
-  echo "The NOMAD_SERVER_ADDRESS env var is required."
-  echo "It should point to the ip address of your CircleCI"
-  echo "services installation."
-  exit 1
-fi
+# if [ -z "${NOMAD_SERVER_ADDRESS}" ]; then
+#   echo "The NOMAD_SERVER_ADDRESS env var is required."
+#   echo "It should point to the ip address of your CircleCI"
+#   echo "services installation."
+#   exit 1
+# fi
 
 echo "-------------------------------------------"
 echo "     Performing System Updates"

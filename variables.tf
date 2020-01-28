@@ -48,4 +48,3 @@ variable "circleci_zone" {
   description = "The default zone region for the CircleCI VM instances"
   default     = ""
 }
-
