@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -exu
-
+NOMAD_SERVER_ADDRESS="" # Enter IP Address of the Services VM
 NOMAD_VERSION="0.5.6"
 DOCKER_VERSION="17.03.2"
 UNAME="$(uname -r)"
@@ -12,9 +12,7 @@ is_xenial(){
 }
 
 guess_private_ip(){
-  INET="eth0"
-  is_xenial && INET="ens3"
-  /sbin/ifconfig $INET | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'
+  hostname -I | awk '{ print $1 }'
 }
 
 docker_package_name(){
@@ -48,12 +46,12 @@ export PRIVATE_IP
 
 echo "Using address: ${PRIVATE_IP}"
 
-if [ -z "${NOMAD_SERVER_ADDRESS}" ]; then
-  echo "The NOMAD_SERVER_ADDRESS env var is required."
-  echo "It should point to the ip address of your CircleCI"
-  echo "services installation."
-  exit 1
-fi
+# if [ -z "${NOMAD_SERVER_ADDRESS}" ]; then
+#   echo "The NOMAD_SERVER_ADDRESS env var is required."
+#   echo "It should point to the ip address of your CircleCI"
+#   echo "services installation."
+#   exit 1
+# fi
 
 echo "-------------------------------------------"
 echo "     Performing System Updates"

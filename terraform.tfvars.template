@@ -1,0 +1,11 @@
+# Required Configs
+credentials           = "..." #Example ${file("~/<PATH_TO_FILE>/keys.json")}
+project               = "..."
+region                = "..."
+zone                  = "..."
+circleci_network_name = "..."
+subnet_name           = "..."
+
+# Optional
+services_machine_type     = "n2-standard-8" # Minimum Requirement: 8 vCPU / 32 GB Memory
+nomad_client_machine_type = "n2-standard-8" # Minimum Requirement: 8 vCPU / 32 GB Memory
