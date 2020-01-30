@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -exu
-NOMAD_SERVER_ADDRESS="" # Enter IP Address of the Services VM
+NOMAD_SERVER_ADDRESS="" # Enter External IP Address of the Services VM
 NOMAD_VERSION="0.5.6"
 DOCKER_VERSION="17.03.2"
 UNAME="$(uname -r)"
