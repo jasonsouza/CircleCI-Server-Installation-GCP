@@ -2,7 +2,7 @@
 credentials           = "..." #Example ${file("~/<PATH_TO_FILE>/keys.json")}
 project               = "..."
 region                = "..."
-zone                  = "..."
+circleci_zone         = "..."
 circleci_network_name = "..."
 subnet_name           = "..."
 
